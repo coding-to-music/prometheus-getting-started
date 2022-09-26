@@ -4,6 +4,8 @@
 env
 .env
 
+prometheus-2.38.0.linux-amd64
+
 # basic auth related
 *.htpasswd
 basic_auth_password

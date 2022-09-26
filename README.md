@@ -41,7 +41,10 @@ This guide is a "Hello World"-style tutorial which shows how to install, configu
 
 Download the latest release of Prometheus for your platform, then extract and run it:
 
+https://prometheus.io/download/
+
 ```
+wget https://github.com/prometheus/prometheus/releases/download/v2.38.0/prometheus-2.38.0.linux-amd64.tar.gz
 tar xvfz prometheus-*.tar.gz
 cd prometheus-*
 ```
