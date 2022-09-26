@@ -1,6 +1,6 @@
 # prometheus-getting-started
 
-# 🚀 Monitoring solution with NGINX, Grafana, Prometheus and several Prometheus exporters, like cAdvisor, node-exporter, postgres_exporter and jmx_exporter. 🚀
+# 🚀 This guide is a "Hello World"-style tutorial which shows how to install, configure, and use a simple Prometheus instance. You will download and run Prometheus locally, configure it to scrape itself and an example application, then work with queries, rules, and graphs to use collected time series data. 🚀
 
 https://github.com/coding-to-music/prometheus-getting-started
 
