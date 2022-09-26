@@ -139,11 +139,8 @@ The Node Exporter is used as an example target, for more information on using it
 ```
 tar -xzvf node_exporter-*.*.tar.gz
 cd node_exporter-*.*
-```
 
 # Start 3 example targets in separate terminals:
-
-```
 ./node_exporter --web.listen-address 127.0.0.1:8080
 ./node_exporter --web.listen-address 127.0.0.1:8081
 ./node_exporter --web.listen-address 127.0.0.1:8082
