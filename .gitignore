@@ -1,0 +1,17 @@
+# directories
+.vagrant
+.vscode
+env
+.env
+
+# basic auth related
+*.htpasswd
+basic_auth_password
+
+# certificate related
+*.csr
+*.pem
+
+# playbooks related
+azure_credentials.yml
+*.retry
