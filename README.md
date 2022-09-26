@@ -99,13 +99,13 @@ You can also verify that Prometheus is serving metrics about itself by navigatin
 
 Let us explore data that Prometheus has collected about itself. To use Prometheus's built-in expression browser, navigate to http://localhost:9090/graph and choose the "Table" view within the "Graph" tab.
 
-As you can gather from localhost:9090/metrics, one metric that Prometheus exports about itself is named prometheus_target_interval_length_seconds (the actual amount of time between target scrapes). Enter the below into the expression console and then click "Execute":
+As you can gather from http://localhost:9090/metrics, one metric that Prometheus exports about itself is named prometheus_target_interval_length_seconds (the actual amount of time between target scrapes). Enter the below into the expression console and then click "Execute":
 
 ```
 prometheus_target_interval_length_seconds
 ```
 
-This should return a number of different time series (along with the latest value recorded for each), each with the metric name prometheus_target_interval_length_seconds, but with different labels. These labels designate different latency percentiles and target group intervals.
+This should return a number of different time series (along with the latest value recorded for each), each with the metric name `prometheus_target_interval_length_seconds`, but with different labels. These labels designate different latency percentiles and target group intervals.
 
 If we are interested only in 99th percentile latencies, we could use this query:
 
@@ -120,6 +120,8 @@ count(prometheus_target_interval_length_seconds)
 ```
 
 For more about the expression language, see the expression language documentation.
+
+https://prometheus.io/docs/prometheus/latest/querying/basics/
 
 ## Using the graphing interface
 
@@ -139,7 +141,11 @@ Let's add additional targets for Prometheus to scrape.
 
 The Node Exporter is used as an example target, for more information on using it see these instructions.
 
+https://prometheus.io/docs/guides/node-exporter/
+
 ```
+wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.linux-amd64.tar.gz
+
 tar -xzvf node_exporter-*.*.tar.gz
 cd node_exporter-*.*
 
@@ -233,4 +239,8 @@ scrape_configs:
           group: 'canary'
 ```
 
-Restart Prometheus with the new configuration and verify that a new time series with the metric name job_instance_mode:node_cpu_seconds:avg_rate5m is now available by querying it through the expression browser or graphing it.
+Restart Prometheus with the new configuration and verify that a new time series with the metric name `job_instance_mode:node_cpu_seconds:avg_rate5m` is now available by querying it through the expression browser or graphing it.
+
+```
+job_instance_mode:node_cpu_seconds:avg_rate5m
+```
