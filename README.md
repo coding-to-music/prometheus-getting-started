@@ -244,3 +244,9 @@ Restart Prometheus with the new configuration and verify that a new time series 
 ```
 job_instance_mode:node_cpu_seconds:avg_rate5m
 ```
+
+## see what ports are in use
+
+```
+sudo netstat -tunlp
+```
